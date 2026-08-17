@@ -1,0 +1,339 @@
+/*==========================
+        RESET
+==========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff;
+    color:#222;
+}
+
+/*==========================
+        HEADER
+==========================*/
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(10px);
+}
+
+.logo img{
+    width:75px;
+    height:75px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+nav{
+    display:flex;
+    gap:35px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+/*==========================
+        SLIDER
+==========================*/
+
+.slider{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:1s;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.slide::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+}
+
+.texto{
+    position:absolute;
+    top:50%;
+    left:8%;
+    transform:translateY(-50%);
+    color:white;
+    z-index:2;
+}
+
+.texto h1{
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+.texto p{
+    font-size:24px;
+    margin-bottom:35px;
+}
+
+.texto button{
+    padding:16px 40px;
+    border:none;
+    background:#d4af37;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+    font-size:18px;
+    transition:.3s;
+}
+
+.texto button:hover{
+    background:#b99015;
+}
+
+/*==========================
+      CATEGORÍAS
+==========================*/
+
+.categorias{
+    padding:100px 8%;
+}
+
+.categorias h2{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:60px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    overflow:hidden;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+}
+
+.card h3{
+    text-align:center;
+    padding:20px;
+}
+
+/*==========================
+      PRODUCTOS
+==========================*/
+
+.productos{
+    padding:100px 8%;
+    background:#f7f7f7;
+}
+
+.productos h2{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:60px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.producto{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+    transition:.3s;
+}
+
+.producto:hover{
+    transform:translateY(-8px);
+}
+
+.producto img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+.producto h3{
+    margin:20px 0 10px;
+}
+
+.producto span{
+    color:#d4af37;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.producto button{
+    margin:20px;
+    padding:12px 30px;
+    border:none;
+    background:#000;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.producto button:hover{
+    background:#d4af37;
+}
+
+/*==========================
+      PROMOCIÓN
+==========================*/
+
+.promo{
+    padding:120px 20px;
+    text-align:center;
+    background:url("https://images.unsplash.com/photo-1523381210434-271e8be1f52?auto=format&fit=crop&w=2000&q=80") center/cover;
+    color:white;
+    position:relative;
+}
+
+.promo::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.55);
+}
+
+.promo h2,
+.promo p,
+.promo button{
+    position:relative;
+    z-index:2;
+}
+
+.promo h2{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.promo p{
+    font-size:24px;
+    margin-bottom:30px;
+}
+
+.promo button{
+    padding:15px 40px;
+    border:none;
+    background:#d4af37;
+    color:white;
+    cursor:pointer;
+}
+
+/*==========================
+        FOOTER
+==========================*/
+
+footer{
+    background:#111;
+    color:white;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:60px 8%;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer i{
+    font-size:28px;
+    margin-right:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+footer i:hover{
+    color:#d4af37;
+}
+
+/*==========================
+      RESPONSIVE
+==========================*/
+
+@media(max-width:900px){
+
+header{
+    flex-direction:column;
+    gap:20px;
+    padding:20px;
+}
+
+nav{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.texto h1{
+    font-size:42px;
+}
+
+.texto p{
+    font-size:18px;
+}
+
+.slider{
+    height:80vh;
+}
+
+}
